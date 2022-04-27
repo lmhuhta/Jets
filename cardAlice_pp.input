@@ -76,6 +76,7 @@ JetLeadPtBorders	0 3.0 5.0 10.0 25.0 50.0 100.0
 JetMultBorders		0 4 8 12 16 20 100
 DeltaRBorders		0.0 0.2 0.4 0.6
 JetEtaCut               0.25
+DiJetMassBorders        0 10 15 20 30 60 80 100 140 180 240 500
 
 #======= Jussi's jT analysis =======
 EnableKlongBins 0 # 0 = Do not fill klong bins. 1 = Fill klong bins

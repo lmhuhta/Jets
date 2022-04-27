@@ -16,9 +16,9 @@
 
 #include <TClonesArray.h>
 #include <TLorentzVector.h>
-//#include "src/AliJBaseTrack.h"
-//#include "src/AliJCard.h"
-//#include "src/JHistos.h"
+#include "src/AliJBaseTrack.h"
+#include "src/AliJCard.h"
+#include "src/JHistos.h"
 
 using namespace std;
 using namespace Pythia8; 
@@ -49,7 +49,7 @@ class MyUserInfo : public PseudoJet::UserInfoBase{
 
 int main(int argc, char **argv) {
 
-  if(argc<4){
+  if(argc<6){
     cout<<"usage: pythia.config card.input pthatmin pthatmax <output.root> [random_seed]"<<endl;exit(1);//usage of the code, requieres 4 inputs
   }
   TStopwatch timer; 
@@ -64,11 +64,12 @@ int main(int argc, char **argv) {
 
   TFile *fout = new TFile(outputs.Data(),"RECREATE");
   fout->cd();//opening of the output file
-/*
+
   AliJCard *fcard = new AliJCard(cardInput);
   JHistos *fhistos = new JHistos(fcard);
   fhistos->CreateQAHistos();
   fhistos->CreateFFHistos();
+  cout << "OK" << endl;
   fhistos->CreateDiJetHistos();
 
   //---------------------
@@ -100,10 +101,11 @@ int main(int argc, char **argv) {
   // List changed data. 
   if (showCS)  pythia.settings.listChanged();
   if (showCPD) pdt.listChanged();
-*/
+
 
   TH1D *hCrossSectionInfo = new TH1D("hCrossSection","CrossSectionInfo",6,0,6);
-/*
+
+  cout << "OK2" << endl;
   //------------------------------------------------------------------
   // Define jet reconstruction
   //------------------------------------------------------------------
@@ -197,7 +199,7 @@ int main(int argc, char **argv) {
   fout->Write();
   fcard->WriteCard(fout); // Write card into the file
   fout->Close();
-  cout << EventCounter << " events are analyzed successfully."<< endl;*/
+  cout << EventCounter << " events are analyzed successfully."<< endl;
   timer.Print(); 
   return 0;
 }
