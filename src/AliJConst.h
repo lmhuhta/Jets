@@ -40,7 +40,7 @@
 #define kMaxNoCentrBin 10   // Maximum no of centrality bins defined in JCard.h
 #define kMaxTriggParticleType 35           //
 #define kMaxJetType  32          //
-#define kPtDim 15           //
+#define kPtDim 0 //15            //Original 15
 #define kMaxNoRuns 100      // Maximum no of runs in a nanoDST file
 #define kMaxNoEPBin 24
 
@@ -76,7 +76,7 @@ const int kRangeTriggerTableJCorran = 16;
 //==================================================================================
 enum fillType { kReal, kMixed, kEtaGap };
 enum corrFillType {kAzimuthFill=0,kPionFill=1};
-enum corrType { kTriggType, kAssocType, kXeType, kLongType, kCentrType, kZVertType, kMassType, kEtaGapType,  kPhiGapType, kDiJetType, kRGapType, kNoType, kNcorrType };
+enum corrType { kJetTriggType, kTriggType, kAssocType, kXeType, kLongType, kCentrType, kZVertType, kMassType, kEtaGapType,  kPhiGapType, kDiJetType, kRGapType, kNoType, kNcorrType };
 enum TriggerParticleType { kTriggParticles, kLeadingParticle, kIsolatedParticle };
 
 const char* const kTriggerParticleTypeName[] =

@@ -115,7 +115,7 @@ int main(int argc, char **argv) {
   double etaMaxCutForJet = 1.2;///
   double coneR = 0.6;
   double etaMaxCutForPart = etaMaxCutForJet+coneR;///
-  double MinJetPt = 20.; // Min Jet Pt cut to disregard low pt jets
+  double MinJetPt = 5.; // Min Jet Pt cut to disregard low pt jets
 
   JetDefinition jet_def(antikt_algorithm, coneR); 
 
@@ -135,7 +135,7 @@ int main(int argc, char **argv) {
     if(iEvent % ieout == 0) cout << iEvent << "\t" << int(float(iEvent)/nEvent*100) << "%" << endl ;
     //int icent = 0;
     
-    for (unsigned int i = 0; i < pythia.event.size(); ++i) {//loop over all the particles in the event
+    for (int i = 0; i < pythia.event.size(); ++i) {//loop over all the particles in the event
       // Building input particle list for the jet reconstruction
       // Make sure "applying same cut done in ATLAS paper ?  flavor of the parciles ,eta , min pt cut 
       if (pythia.event[i].isFinal() && TMath::Abs(pythia.event[i].eta()) < etaMaxCutForPart && pythia.event[i].pT()>PartMinPtCutForJet){
@@ -163,9 +163,11 @@ int main(int argc, char **argv) {
       fhistos->fhJetRapidity->Fill(jets[i].rap());  
       fhistos->fhJetPt->Fill(jets[i].pt());
 
-      int ptbin = fcard->GetBin(kTriggType, jets[i].pt());
+      int ptbin = fcard->GetBin(kJetTriggType, jets[i].pt());
+
       // Only for the jet pt bin registered in the card
-      if(ptbin<0) continue;
+      if(ptbin<0){continue;}
+
 
       TLorentzVector lvjet = TLorentzVector(jets[i].px(),jets[i].py(),jets[i].pz(),jets[i].e());//creating the jet lorentz vector for the deltar calculation
 

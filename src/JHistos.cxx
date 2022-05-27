@@ -91,9 +91,9 @@ void JHistos::CreateFFHistos() {
 	double logZ = (log(zHigh)-log(zLow))/nZ;
 	for(int ij=0;ij<=nZ;ij++) logBinsZ[ij]=zLow*exp(ij*logZ);
 
-	for(int hit=0; hit < fcard->GetNoOfBins(kTriggType); hit++){
-		float pTt1 = fcard->GetBinBorder(kTriggType, hit);
-		float pTt2 = fcard->GetBinBorder(kTriggType, hit + 1);
+	for(int hit=0; hit < fcard->GetNoOfBins(kJetTriggType); hit++){
+		float pTt1 = fcard->GetBinBorder(kJetTriggType, hit);
+		float pTt2 = fcard->GetBinBorder(kJetTriggType, hit + 1);
 		char htit[100], hname[100];
 
 		fhTriggPtBin[hit] = new TH1D(Form("hTriggPtBin%02d",hit),"", (int)TMath::Ceil((pTt2-pTt1)/ptbw),pTt1, pTt2);

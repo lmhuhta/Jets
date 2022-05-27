@@ -92,6 +92,7 @@ TString AliJCard::GetKeyWord(corrType ctype){
     TString kw;
 
     switch(ctype){
+        case kJetTriggType:  kw = "JetTriggPtBorders"; break;
         case kTriggType:  kw = "TriggPtBorders"; break;
         case kAssocType:  kw = "AssocPtBorders"; break;
         case kXeType:     kw = "xEBorders"; break;

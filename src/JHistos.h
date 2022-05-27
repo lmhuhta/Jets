@@ -23,8 +23,8 @@
 #include <TClonesArray.h>
 #include <TFormula.h>
 #include "AliJCard.h"
-#define kPtDim 15
-#define kPTypeDim 15
+#define kPtDim 0 //15
+#define kPTypeDim 0 //15
 
 class JHistos {
 

@@ -27,8 +27,8 @@ INCS    += -I$(PYTHIA8)/include
 LDFLAGS += $(shell $(PYTHIA8)/bin/pythia8-config --cppflags --libs)
 
 #####CHANGE THESE PATHS TO YOUR OWN ONES
-LDFLAGS += -L/home/alidock/.sw/slc7_x86-64/cgal/latest-aliroot6-user-next-root6/lib/ -lCGAL
-LDFLAGS += -L/home/alidock/.sw/slc7_x86-64/GMP/latest-aliroot6-user-next-root6/lib/ -lgmp
+LDFLAGS += -L$(CGAL) -lCGAL
+LDFLAGS += -L$(GMP) -lgmp
 CXXFLAGS  += $(INCS)
 LDFLAGS += $L -ldl
 
