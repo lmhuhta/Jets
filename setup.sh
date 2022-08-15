@@ -6,10 +6,10 @@
 #export ROOTSYS=$HOME/.sw/slc7_x86-64/AliPhysics/aliroot6-local1
 #source ~/.sw/slc7_x86-64/ROOT/latest-aliroot6-user-next-root6/bin/thisroot.sh
 
-export PYTHIA8=$HOME/software/pythia8306
-export PATH=${PATH}:$PYTHIA8/bin
-export FASTJET=$HOME/software/fastjet-install
-export PATH=$PATH:${FASTJET}/bin
+export PYTHIA8=$HOME/alice/pythia8307
+#export PATH=${PATH}:$PYTHIA8/bin
+#export FASTJET=$HOME/alice/fastjet-install
+#export PATH=$PATH:${FASTJET}/bin
 #export DYLD_LIBRARY_PATH=${DYLD_LIBRARY_PATH}:$PYTHIA8/lib:$FASTJET/lib:$ROOTSYS/lib
 
 
